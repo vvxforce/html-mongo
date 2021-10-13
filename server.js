@@ -7,13 +7,15 @@ var app = express();
 var urlencodedParser = bodyParser.urlencoded({ extended: true })
 
 
-mongoose.connect("mongodb+srv://angel:WhiteAngel3662!@cluster0.b1bbq.mongodb.net/whiteangels?retryWrites=true&w=majority", {useNewUrlParser: true}, {useUnifiedTopology: true})
+mongoose.connect("mongodb+srv://angel:WhiteAngel3662!@cluster0.b1bbq.mongodb.net/whiteangels?retryWrites=true&w=majority", { useNewUrlParser: true }, { useUnifiedTopology: true })
 
 const notesSchema = {
     email: String
 }
 
 const Note = mongoose.model("Note", notesSchema)
+
+app.use(express.static(__dirname));
 
 app.get("/", function(req, res) {
     res.sendFile(__dirname + "/index.html")
@@ -25,12 +27,11 @@ app.post("/", urlencodedParser, function(req, res) {
     let newNote = new Note({
         email: req.body.email
     })
-    newNote.save(); 
+    newNote.save();
     res.redirect("/")
 })
 
 
-app.listen(3000, function () {
+app.listen(3000, function() {
     console.log("server is running on 3000")
-}
-)
+})

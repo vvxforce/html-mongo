@@ -1,0 +1,93 @@
+@font-face {
+    font-family: "Grifter";
+    src: url("/Grifter_bold.woff") format("woff");
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('bg.jpeg');
+    background-size: cover;
+}
+
+.logo {
+    padding-top: 60px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.headline {
+    padding-top: 60px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    font-size: 100px;
+    font-family: "Grifter";
+}
+
+.signal {
+    padding-top: 76px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+    font-family: "Grifter";
+}
+
+.inputs {
+    padding-top: 20px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.inputs input {
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+    color: #788D8D;
+    border: 1px solid #FFF;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.center_text {
+    padding-top: 85px;
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+    font-family: "Grifter";
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    max-width: 495px;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.form input {
+    font-weight: bold;
+    font-size: 24px;
+    font-family: "Grifter";
+    line-height: 25px;
+    /* identical to box height */
+    letter-spacing: 0.06em;
+    color: #788D8D;
+    width: 100%;
+    padding: 16px 20px;
+    border: 1px solid #FFF;
+    background: rgba(255, 255, 255, 0.4);
+}
+.form button {
+    margin-top: 30px;
+    width: 100%;
+    height: 60px;
+    background: #FFF;
+    border: none;
+    font-size: 24px;
+    font-family: "Grifter";
+    padding-top: 14px;
+    border-radius: 100px;
+}
