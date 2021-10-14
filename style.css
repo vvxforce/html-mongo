@@ -80,6 +80,7 @@ body {
     border: 1px solid #FFF;
     background: rgba(255, 255, 255, 0.4);
 }
+
 .form button {
     margin-top: 30px;
     width: 100%;
@@ -90,4 +91,20 @@ body {
     font-family: "Grifter";
     padding-top: 14px;
     border-radius: 100px;
+}
+
+@media only screen and (max-width: 700px) {
+    .headline {
+        font-size: 40px;
+    }
+    .form {
+        max-width: 300px;
+    }
+
+    .form input {
+        font-size: 20px;
+    }
+    .center_text {
+        font-size:16px;
+    }
 }
