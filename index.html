@@ -7,21 +7,43 @@
 </head>
 
 <body>
-    <img src="/logo.png" alt="logo" class="logo">
-    <p class="headline">White Angels</p>
-    <div class="signal">Do you have a signal?</div>
-    <div class="inputs ">
-        <input class="pin" disabled/>
-        <input class="pin" disabled/>
-        <input class="pin" disabled/>
-        <input class="pin" disabled/>
-    </div>
+    <div class="main">
+        <img src="/logo.png" alt="logo" class="logo">
+        <p class="headline">White Angels</p>
+        <div class="signal">Do you have a signal?</div>
+        <div class="inputs ">
+            <input class="pin" maxlength="1" />
+            <input class="pin" maxlength="1" />
+            <input class="pin" maxlength="1" />
+            <input class="pin" maxlength="1" />
+        </div>
 
-    <p class="center_text">Enter your email to receive a signal</p>
-    <form class="form" method="post" action="/">
-        <input class="form-control" name="email" placeholder="example@mail.com">
-        <button class="button" type="submit">Subscribe</button>
-    </form>
+        <p class="center_text">Enter your email to receive a signal</p>
+        <form class="form" method="post" action="/">
+            <input class="form-control" name="email" placeholder="example@mail.com">
+            <button class="button" type="submit">Subscribe</button>
+        </form>
+    </div>
 </body>
+
+<script>
+    var container = document.getElementsByClassName("inputs")[0];
+    container.onkeyup = function (e) {
+        var target = e.srcElement;
+        var maxLength = parseInt(target.attributes["maxlength"].value, 10);
+        var myLength = target.value.length;
+        if (myLength >= maxLength) {
+            var next = target;
+            while (next = next.nextElementSibling) {
+                if (next == null)
+                    break;
+                if (next.tagName.toLowerCase() == "input") {
+                    next.focus();
+                    break;
+                }
+            }
+        }
+    }
+</script>
 
 </html>
