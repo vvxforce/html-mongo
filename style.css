@@ -108,24 +108,36 @@ body {
     transition-duration: 1s;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1136px) {
     body {
         background-image: url('bg_p.jpeg');
         background-size: cover;
     }
     .headline {
         padding-top: 100px;
-        font-size: 40px;
+        font-size: 7em;
     }
     .signal {
         padding-top: 100px;
+        font-size: 3em;
     }
+
+    .inputs {
+        max-width: 20em;
+        padding-top: 5em;
+    }
+
+    .inputs input {
+        width: 4em;
+        height: 4em;
+    }
+
     .center_text {
         padding-top: 100px;
-        font-size: 16px;
+        font-size: 3em;
     }
     .form {
-        max-width: 300px;
+        max-width: 30em;
     }
     .form input {
         font-size: 20 px;
