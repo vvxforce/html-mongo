@@ -2,30 +2,59 @@
 <html lang="en">
 
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="/style.css">
     <title>Whiteangels</title>
 </head>
 
 <body>
-    <div class="main">
+    <div class="page-signal-code">
         <img src="/logo.png" alt="logo" class="logo">
         <p class="headline">White Angels</p>
-        <div class="signal">Enter your signal code</div>
-        <div class="inputs ">
-            <input class="pin" maxlength="1" />
-            <input class="pin" maxlength="1" />
-            <input class="pin" maxlength="1" />
-            <input class="pin" maxlength="1" />
+        <div class="text-signal">Enter your signal code</div>
+        <div class="form-code">
+            <div class="inputs ">
+                <input type="text" class="pin" maxlength="1" />
+                <input type="text" class="pin" maxlength="1" />
+                <input type="text" class="pin" maxlength="1" />
+                <input type="text" class="pin" maxlength="1" />
+            </div>
         </div>
 
-        <p class="center_text">Enter your email to receive a signal</p>
-        <form class="form" method="post" action="/">
-            <input class="form-control" name="email" type="email" placeholder="example@mail.com">
-            <button class="button" type="submit">Subscribe</button>
+        <form class="form-receive" method="post" action="/">
+            <p class="text-form">Enter your email to receive a signal</p>
+            <div class="relative">
+                <input class="form-control" name="email" type="email" placeholder="example@mail.com" required>
+            </div>
+            <button class="button" type="submit">Subscribe</b   utton>
         </form>
     </div>
-</body>
 
+
+
+</body>
+<script>
+    $(".inputs input:last-child").keyup(function () {
+        // if ($(".inputs input").is(":last-child")) {
+            
+            console.log(this)
+            if (!!$('.form-code .error_msg')) {
+                $('.form-code').append('<p class="error_msg">Incorrect code</p>')
+                $(".pin").css({ 'border': '2px solid #D62D30' })
+            }
+
+        // }
+    })
+
+    $(".inputs input").keyup(function () {
+        var key = event.keyCode || event.charCode;
+        if (key == 8 || key == 46) {
+            $(this).prev("input[type='text']").focus();
+            $(".inputs input").css({ 'border': '1px solid #FFF' })
+            $('.form-code .error_msg').remove();    
+        }
+    })
+</script>
 <script>
     var container = document.getElementsByClassName("inputs")[0];
     container.onkeyup = function (e) {
@@ -35,8 +64,10 @@
         if (myLength >= maxLength) {
             var next = target;
             while (next = next.nextElementSibling) {
-                if (next == null)
+                if (next == null) {
+                    console.log("last")
                     break;
+                }
                 if (next.tagName.toLowerCase() == "input") {
                     next.focus();
                     break;
@@ -45,16 +76,16 @@
         }
     }
 
-    
+
 </script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5GRK9E9G92"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-5GRK9E9G92');
+    gtag('config', 'G-5GRK9E9G92');
 </script>
 
 </html>
