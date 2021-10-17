@@ -157,9 +157,8 @@ body {
         -webkit-appearance: none;
         -moz-appearance: none;
     }
-    body {
+    .page-signal-code {
         background-image: url('bg_p.jpeg');
-        background-size: cover;
     }
     .headline {
         padding-top: 100px;
