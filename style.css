@@ -1,5 +1,5 @@
 @font-face {
-    font-family: "Grifter";
+    font-family: "Grifter", sans-serif;
     src: url("/Grifter_bold.woff") format("woff");
 }
 *, *::after, *::before {
