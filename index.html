@@ -26,7 +26,7 @@
             <div class="relative">
                 <input class="form-control" name="email" type="email" placeholder="example@mail.com" required>
             </div>
-            <button class="button" type="submit">Subscribe</b   utton>
+            <button class="button" type="submit">Subscribe</button>
         </form>
     </div>
 
@@ -36,12 +36,12 @@
 <script>
     $(".inputs input:last-child").keyup(function () {
         // if ($(".inputs input").is(":last-child")) {
-            
-            console.log(this)
-            if (!!$('.form-code .error_msg')) {
-                $('.form-code').append('<p class="error_msg">Incorrect code</p>')
-                $(".pin").css({ 'border': '2px solid #D62D30' })
-            }
+
+        console.log(this)
+        if (!!$('.form-code .error_msg')) {
+            $('.form-code').append('<p class="error_msg">Incorrect code</p>')
+            $(".pin").css({ 'border': '2px solid #D62D30' })
+        }
 
         // }
     })
@@ -51,7 +51,7 @@
         if (key == 8 || key == 46) {
             $(this).prev("input[type='text']").focus();
             $(".inputs input").css({ 'border': '1px solid #FFF' })
-            $('.form-code .error_msg').remove();    
+            $('.form-code .error_msg').remove();
         }
     })
 </script>
